@@ -5,14 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import phonecs.WavFile;
+import phonecs.WavFile; /* Used for reading in the *.wav files correctly as that
+						   is out of the scope of this demonstration program */
 
+/**
+ * The driver program for testing all of the frequency generation classes
+ */
 public class Main {
 
 	/**
-	 * Tests the computation accuracy against specified input files with known frequencies.
+	 * Tests the accuracy of the FFTFreqGen class
 	 */
-	private static void testAccuracy() {
+	private static void testAccuracyFFT() {
 		int binSize = 32768 * 4;
 
 		System.out.println("Testing Accuracy.");
@@ -137,12 +141,16 @@ public class Main {
 	}
 
 	/**
-	 * Tests if the a frequency can be computed from an musical instrument
-	 *
-	 * <p>This method tests whether or not the class can compute a frequency from
-	 * a given file containing the recording of a musical instrument.</p>
+	 * Tests the computation accuracy against specified input files with known frequencies.
 	 */
-	private static void testInstruments() {
+	private static void testAccuracy() {
+		testAccuracyFFT();
+	}
+
+	/**
+	 * Tests the FFTFreqGen class against files containing instrument audio data
+	 */
+	private static void testInstrumentsFFT() {
 		int binSize = 32768 * 4;
 
 		System.out.println("\nTesting Instruments.");
@@ -189,12 +197,19 @@ public class Main {
 	}
 
 	/**
-	 * Tests the speed of the various frequency computation methods.
+	 * Tests if the a frequency can be computed from an musical instrument
 	 *
-	 * <p>Tests how fast the computation is done with the various frequency computation
-	 * methods on an extremely large array that is randomly generated.</p>
+	 * <p>This method tests whether or not the class can compute a frequency from
+	 * a given file containing the recording of a musical instrument.</p>
 	 */
-	private static void testSpeed() {
+	private static void testInstruments() {
+		testInstrumentsFFT();
+	}
+
+	/**
+	 * Tests the speed of the FFTFreqGen class
+	 */
+	private static void testSpeedFFT() {
 		int binSize = /*2097152;*/ 1048576;
 		long startTime;
 		long endTime;
@@ -236,6 +251,16 @@ public class Main {
 
 		System.out.println("Multi Threaded Performance:");
 		System.out.format("Frequency: %.3f Hz\nTime: %d ms", out, totalTime);
+	}
+
+	/**
+	 * Tests the speed of the various frequency computation methods.
+	 *
+	 * <p>Tests how fast the computation is done with the various frequency computation
+	 * methods on an extremely large array that is randomly generated.</p>
+	 */
+	private static void testSpeed() {
+		testSpeedFFT();
 	}
 
     /**
