@@ -25,7 +25,7 @@ public class FFTFreqGen implements Runnable, FreqObservable, FrequencyGenerator 
     /**
      * Defaults the sampleRate variable to 8000 Hz
      */
-    FFTFreqGen() {
+    public FFTFreqGen() {
         toFFT = null;
         sampleRate = 8000;
         frequency = 0.0;
@@ -41,7 +41,7 @@ public class FFTFreqGen implements Runnable, FreqObservable, FrequencyGenerator 
      *
      * @param newList The new list to be specified
      */
-    FFTFreqGen(List<ComplexNumber> newList) {
+    public FFTFreqGen(List<ComplexNumber> newList) {
         toFFT = newList;
         sampleRate = 8000;
         frequency = 0.0;
@@ -60,7 +60,7 @@ public class FFTFreqGen implements Runnable, FreqObservable, FrequencyGenerator 
      *
      * @param newRate The specified sample rate.
      */
-    FFTFreqGen(int newRate) {
+    public FFTFreqGen(int newRate) {
         toFFT = null;
         sampleRate = newRate;
         frequency = 0.0;
@@ -77,7 +77,7 @@ public class FFTFreqGen implements Runnable, FreqObservable, FrequencyGenerator 
      * @param newList The new List to compute the frequency from.
      * @param newRate The specified sample rate.
      */
-    FFTFreqGen(List<ComplexNumber> newList, int newRate) {
+    public FFTFreqGen(List<ComplexNumber> newList, int newRate) {
         toFFT = newList;
         sampleRate = newRate;
         frequency = 0.0;
@@ -137,7 +137,7 @@ public class FFTFreqGen implements Runnable, FreqObservable, FrequencyGenerator 
      * @return The computed frequency
      * @throws RuntimeException Thrown when the array is null, or not sized as a power of 2.
      */
-    double computeFrequencyMT() throws RuntimeException {
+    public double computeFrequencyMT() throws RuntimeException {
         if (toFFT == null) {
             throw new RuntimeException(CLASS_TAG + ": ERROR - toFFT array is null");
         }
@@ -190,7 +190,7 @@ public class FFTFreqGen implements Runnable, FreqObservable, FrequencyGenerator 
      * @return The computed frequency
      * @throws RuntimeException Thrown when the array is null, or not sized as a power of 2.
      */
-    double computeFrequencyST() throws RuntimeException {
+    public double computeFrequencyST() throws RuntimeException {
         if (toFFT == null) {
             throw new RuntimeException(CLASS_TAG + ": ERROR - toFFT array is null");
         }
