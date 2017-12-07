@@ -465,7 +465,7 @@ public class ComplexNumber {
     }
 
     /**
-     * arg.real + j*arg.imaginary -> x.real - j*x.imaginary
+     * arg.real + j*arg.imaginary to x.real - j*x.imaginary
      *
      * @param arg The number to take the conjugate of
      * @return The resulting complex number
@@ -475,7 +475,7 @@ public class ComplexNumber {
     }
 
     /**
-     * this.real + j*this.imaginary -> this.real - j*this.imaginary
+     * this.real + j*this.imaginary to this.real - j*this.imaginary
      *
      * @return The current object after the operation
      */

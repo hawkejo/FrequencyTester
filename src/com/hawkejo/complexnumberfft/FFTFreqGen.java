@@ -10,7 +10,7 @@ import java.util.ListIterator;
  * Computes frequencies from {@link ComplexNumber} objects
  *
  * <p>A class that uses the ComplexNumber class to compute frequencies from arrays of
- * data. This class takes in an array or a List<> of ComplexNumbers which is assumed to be
+ * data. This class takes in an array or a List of ComplexNumbers which is assumed to be
  * audio data and then manipulates it to generate a frequency.</p>
  *
  */
