@@ -18,6 +18,8 @@ public class Main {
 	 * Tests the computation accuracy against specified input files with known frequencies.
 	 */
 	private static void testAccuracy() {
+		System.out.println("Testing accuracy of various classes.");
+
 		FFTTester.testAccuracyFFT();
 	}
 
@@ -28,6 +30,8 @@ public class Main {
 	 * a given file containing the recording of a musical instrument.</p>
 	 */
 	private static void testInstruments() {
+		System.out.println("Testing compatibility with instruments of various classes");
+
 		FFTTester.testInstrumentsFFT();
 	}
 
@@ -38,7 +42,10 @@ public class Main {
 	 * methods on an extremely large array that is randomly generated.</p>
 	 */
 	private static void testSpeed() {
-		FFTTester.testSpeedFFT();
+		final int binSize = /*2097152;*/ 1048576;
+		System.out.println("Testing speed of various classes.\nBuffer size: " + binSize);
+
+		FFTTester.testSpeedFFT(binSize);
 	}
 
     /**

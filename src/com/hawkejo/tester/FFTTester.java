@@ -21,7 +21,7 @@ class FFTTester {
 	static void testAccuracyFFT() {
 		int binSize = 32768 * 4;
 
-		System.out.println("Testing Accuracy.");
+		System.out.println("Testing Accuracy of FFTFreqGen.\n");
 
 		// Test the FFTFreqGen class
 		// Test 440 Hz
@@ -148,7 +148,7 @@ class FFTTester {
 	static void testInstrumentsFFT() {
 		int binSize = 32768 * 4;
 
-		System.out.println("\nTesting Instruments.");
+		System.out.println("Testing Instruments of FFTFreqGen.\n");
 
 		// Test the FFTFreqGen class
 		// Test against 6-string acoustic guitar ~ 326.538 Hz
@@ -194,14 +194,13 @@ class FFTTester {
 	/**
 	 * Tests the speed of the FFTFreqGen class
 	 */
-	static void testSpeedFFT() {
-		int binSize = /*2097152;*/ 1048576;
+	static void testSpeedFFT(int binSize) {
 		long startTime;
 		long endTime;
 		long totalTime;
 		double out;
 
-		System.out.println("\nTesting Speed - Array size: " + binSize + "\n");
+		System.out.println("Testing Speed of FFTFreqGen.\n");
 
 		// Generate the array
 		ComplexNumber toFFTArr[] = new ComplexNumber[binSize];
